@@ -1,18 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="zhaoxixiang.bwie.com.kotlintest.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/main_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="专题"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:layout_centerInParent="true"/>
+        <ImageView
+            android:id="@+id/main_sousuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_search"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></FrameLayout>
+<RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:orientation="horizontal">
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:button="@null"
+        android:layout_weight="1"
+        android:text="首页"
+        android:drawableTop="@drawable/home_normal"
+        android:gravity="center"/>
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:button="@null"
+        android:layout_weight="1"
+        android:text="发现"
+        android:gravity="center"/>
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:button="@null"
+        android:layout_weight="1"
+        android:text="热门"
+        android:gravity="center"/>
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:button="@null"
+        android:layout_weight="1"
+        android:text="我的"
+        android:gravity="center"/>
+</RadioGroup>
+</LinearLayout>
