@@ -14,10 +14,10 @@ import zhaoxixiang.bwie.com.kotlintest.R
 /**
  * Created by admin on 2017/12/28/028.
  */
-class FaxianAdapter(context: Context,list: List<FindBean>): RecyclerView.Adapter<FaxianAdapter.MyViewHolder>() {
+class FaxianAdapter(var context: Context,var list: List<FindBean>): RecyclerView.Adapter<FaxianAdapter.MyViewHolder>() {
 
-    private var context:Context=context
-    private var list: List<FindBean> = list
+    /*private var context:Context=context
+    private var list: List<FindBean> = list*/
     override fun onBindViewHolder(holder: MyViewHolder?, position: Int) {
 
         if (holder != null) {
