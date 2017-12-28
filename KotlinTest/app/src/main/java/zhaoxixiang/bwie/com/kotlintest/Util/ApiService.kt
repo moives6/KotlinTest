@@ -1,5 +1,6 @@
 package zhaoxixiang.bwie.com.kotlintest.Util
 
+import io.reactivex.Flowable
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
