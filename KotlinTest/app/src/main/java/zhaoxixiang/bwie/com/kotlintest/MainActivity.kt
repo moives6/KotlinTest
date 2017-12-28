@@ -28,7 +28,20 @@ class MainActivity : AppCompatActivity() {
                 .addTabItem("我的", R.drawable.mine_selected, R.drawable.mine_normal, My::class.java)
 
                 .isShowDivider(false)
-                .setOnTabChangeListener { position, name ->main_tv.setText(name) }
+                .setOnTabChangeListener { position, name ->
+                    when(position){
+                        0->main_tv.setText(name)
+                        1->main_tv.setText(name)
+                        2->main_tv.setText(name)
+
+                    }
+                    when(position){
+                        0->rl.visibility=View.VISIBLE
+                        1->rl.visibility=View.VISIBLE
+                        2->rl.visibility=View.VISIBLE
+                        3->rl.visibility=View.GONE
+                }
+                     }
 
     }
 

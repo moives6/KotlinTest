@@ -8,6 +8,7 @@
     tools:context="zhaoxixiang.bwie.com.kotlintest.MainActivity">
 
     <RelativeLayout
+        android:id="@+id/rl"
         android:background="#fff"
         android:layout_width="match_parent"
         android:layout_height="50dp">
