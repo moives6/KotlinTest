@@ -6,6 +6,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import android.os.Build
 import android.view.View
+import com.facebook.drawee.backends.pipeline.Fresco
 import com.myapplication.Home
 import com.myapplication.Hot
 import com.myapplication.My
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Fresco.initialize(this);
         setContentView(R.layout.activity_main)
         bottom_tab_bar.init(supportFragmentManager)
                 .setImgSize(50f, 50f)

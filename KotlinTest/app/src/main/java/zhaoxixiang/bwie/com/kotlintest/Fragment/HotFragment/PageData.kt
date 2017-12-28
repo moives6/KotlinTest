@@ -27,8 +27,8 @@ class PageData(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
 
     override fun getPageTitle(position: Int): CharSequence {
        when(position){
-           0->return "月排行"
-           1->return "周排行"
+           0->return "周排行"
+           1->return "月排行"
            2->return "总排行"
        }
         return ""

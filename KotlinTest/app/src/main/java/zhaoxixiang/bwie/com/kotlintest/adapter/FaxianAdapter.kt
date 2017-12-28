@@ -21,7 +21,12 @@ class FaxianAdapter(var context: Context,var list: List<FindBean>): RecyclerView
     override fun onBindViewHolder(holder: MyViewHolder?, position: Int) {
 
         if (holder != null) {
+            //holder.tv.text=list.get(position).name
+
             holder.tv.setText(list.get(position).name)
+
+            holder.sdv.setImageURI(list.get(position).bgPicture)
+
         }
     }
 
