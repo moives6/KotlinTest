@@ -21,7 +21,7 @@ class FaxianAdapter(context: Context,list: List<FindBean>): RecyclerView.Adapter
     override fun onBindViewHolder(holder: MyViewHolder?, position: Int) {
 
         if (holder != null) {
-            holder.tv.text=list.get(position).name
+            holder.tv.setText(list.get(position).name)
         }
     }
 
