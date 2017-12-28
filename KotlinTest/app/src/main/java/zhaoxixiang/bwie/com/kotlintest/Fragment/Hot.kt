@@ -16,10 +16,10 @@ import zhaoxixiang.bwie.com.kotlintest.View.ShowHotView
 /**
  * Created by 胡靖宇 on 2017/12/27.
  */
-class Hot : Fragment(),ShowHotView {
+class Hot : Fragment() {
 
 
-    var hp:HotprestenerSE?=null
+
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view=inflater!!.inflate(R.layout.hot, container, false)
@@ -29,17 +29,9 @@ class Hot : Fragment(),ShowHotView {
         var   pd= PageData(activity.getSupportFragmentManager())
         vp.adapter=pd
 
-        hp=HotprestenerSE(this)
-        hp!!.pAndm()
-
         tbs.setViewPager(vp)
         return view
     }
 
-    override fun ShowHotData(hotbean: Hotbean) {
 
-        Log.d("xxx",hotbean.itemList.toString())
-
-
-    }
 }

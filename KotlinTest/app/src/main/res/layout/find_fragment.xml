@@ -6,6 +6,12 @@
     android:background="#fff"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/fxtv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="12"
+        android:textSize="32dp"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/faxian_rlv"
         android:layout_width="match_parent"
