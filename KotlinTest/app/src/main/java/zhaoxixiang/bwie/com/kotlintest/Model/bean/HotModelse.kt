@@ -44,6 +44,21 @@ class HotModelse {
 
 
     }
+
+    fun getHotAllData() : Flowable<Hotbean> {
+
+
+
+        val retrofit = Retrofit.Builder().baseUrl(API.url)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build()
+        val apiService = retrofit.create(ApiService::class.java)
+        val flowable = apiService.getHotData(10, "historical", "26868b32e808498db32fd51fb422d00175e179df", 83)
+        return flowable
+
+
+    }
 }
 
 

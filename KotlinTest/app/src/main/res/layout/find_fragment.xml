@@ -9,11 +9,7 @@
     <TextView
         android:id="@+id/fxtv"
         android:layout_width="match_parent"
-<<<<<<< HEAD
-        android:layout_height="match_parent"
-=======
         android:layout_height="50dp"
->>>>>>> c5ba1af5da446aa37dff35a369a607dca2e5615e
         android:text="12"
         android:textSize="32dp"/>
     <android.support.v7.widget.RecyclerView

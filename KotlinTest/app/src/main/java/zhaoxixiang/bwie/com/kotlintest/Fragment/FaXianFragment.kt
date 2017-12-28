@@ -6,12 +6,12 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-<<<<<<< HEAD
+
 import android.widget.Toast
 import com.astuetz.PagerSlidingTabStrip
 import com.myapplication.PageData
-=======
->>>>>>> c5ba1af5da446aa37dff35a369a607dca2e5615e
+
+
 import kotlinx.android.synthetic.main.find_fragment.*
 import zhaoxixiang.bwie.com.kotlintest.Model.bean.bean.FindBean
 import zhaoxixiang.bwie.com.kotlintest.Prestener.FaxianPrestener
@@ -22,46 +22,47 @@ import zhaoxixiang.bwie.com.kotlintest.adapter.FaxianAdapter
 /**
  * Created by admin on 2017/12/27/027.
  */
-class FaXianFragment: android.support.v4.app.Fragment() ,FaxianView{
+class FaXianFragment: android.support.v4.app.Fragment() ,FaxianView {
 
-    var presenter: FaxianPrestener? =null
-    var adapter: FaxianAdapter? =null
-<<<<<<< HEAD
-    var list:List<FindBean>?=null
+    var presenter: FaxianPrestener? = null
+    var adapter: FaxianAdapter? = null
+
+    var list: List<FindBean>? = null
     override fun showData(faxian: List<FindBean>) {
         //Toast.makeText(activity,faxian.get(0).description,Toast.LENGTH_LONG).show()
         fxtv.setText(faxian.get(0).name)
-=======
-    var list:List<FindBean>?=ArrayList<FindBean>()
-    override fun showData(faxian: List<FindBean>) {
 
-        fxtv.setText(faxian.get(2).name)
+        var list: List<FindBean>? = ArrayList<FindBean>()
+         fun showData(faxian: List<FindBean>) {
 
-        list=faxian
->>>>>>> c5ba1af5da446aa37dff35a369a607dca2e5615e
-    }
+            fxtv.setText(faxian.get(2).name)
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = View.inflate(activity, R.layout.find_fragment, null)
+            list = faxian
 
-<<<<<<< HEAD
-        adapter= FaxianAdapter(activity,list!!)
-        faxian_rlv.layoutManager=GridLayoutManager(activity,2)
-        faxian_rlv.adapter=adapter
-        presenter=FaxianPrestener(this)
-        presenter!!.pm()
+        }
 
-=======
-        presenter=FaxianPrestener(this)
-        presenter!!.pm()
->>>>>>> c5ba1af5da446aa37dff35a369a607dca2e5615e
-        return view
-    }
+         fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+            val view = View.inflate(activity, R.layout.find_fragment, null)
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        adapter= FaxianAdapter(activity,list!!)
-        faxianrlv.layoutManager=LinearLayoutManager(context)
-        faxianrlv.adapter=adapter
+
+            adapter = FaxianAdapter(activity, list!!)
+            faxianrlv.layoutManager = GridLayoutManager(activity, 2)
+            faxianrlv.adapter = adapter
+            presenter = FaxianPrestener(this)
+            presenter!!.pm()
+
+
+            presenter = FaxianPrestener(this)
+            presenter!!.pm()
+
+            return view
+        }
+
+         fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
+            adapter = FaxianAdapter(activity, list!!)
+            faxianrlv.layoutManager = LinearLayoutManager(context)
+            faxianrlv.adapter = adapter
+        }
     }
 }
