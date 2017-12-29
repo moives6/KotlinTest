@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import zhaoxixiang.bwie.com.kotlintest.Model.bean.bean.Hotbean
+import zhaoxixiang.bwie.com.kotlintest.PlayMoveActivity
 import zhaoxixiang.bwie.com.kotlintest.Prestener.HotprestenerSE
 import zhaoxixiang.bwie.com.kotlintest.R
 import zhaoxixiang.bwie.com.kotlintest.View.ShowHotView
@@ -38,16 +39,20 @@ class Month : Fragment(),ShowHotView {
         adappter.setOnItemClickListener(object : HotAdapter.OnItemClickListener{
             override fun onItemClick(view: View, position: Int) {
 
-
                 val intent = Intent()
                 var bundle = Bundle()
                 //获取intent对象
-                // intent.setClass(activity,MainActivity::class.java)
+                intent.setClass(activity, PlayMoveActivity::class.java)
 
-                //bundle.putString("one",""+position)
-                //intent.putExtras(bundle)
+                bundle.putString("url",hotbean.itemList!!.get(position).data!!.playUrl)
+                bundle.putString("imgplay",hotbean.itemList!!.get(position).data!!.cover!!.detail)
+                bundle.putString("imgblurred",hotbean.itemList!!.get(position).data!!.cover!!.blurred)
+                bundle.putString("title",hotbean.itemList!!.get(position).data!!.title)
+                bundle.putString("text",hotbean.itemList!!.get(position).data!!.descriptionEditor)
+                bundle.putString("type",hotbean.itemList!!.get(position).data!!.category)
+                intent.putExtras(bundle)
                 // 获取class是使用::反射
-                // startActivity(intent)
+                startActivity(intent)
             }
 
         })

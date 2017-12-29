@@ -14,17 +14,40 @@ import zhaoxixiang.bwie.com.kotlintest.R
 /**
  * Created by admin on 2017/12/28/028.
  */
-class FaxianAdapter(context: Context,list: List<FindBean>): RecyclerView.Adapter<FaxianAdapter.MyViewHolder>() {
+class FaxianAdapter(var context: Context,var list: List<FindBean>): RecyclerView.Adapter<FaxianAdapter.MyViewHolder>() {
 
-    private var context:Context=context
-    private var list: List<FindBean> = list
+    /*private var context:Context=context
+    private var list: List<FindBean> = list*/
+
+    //自定义接口点击事件
+    interface OnItemClick{
+        fun onItemClick(position: FindBean)
+    }
+
+    var listener:OnItemClick?=null
+    fun setOnClick(listener:OnItemClick){
+        this.listener=listener
+    }
     override fun onBindViewHolder(holder: MyViewHolder?, position: Int) {
 
         if (holder != null) {
 
+
             holder.tv.text=list.get(position).name
 
             holder.tv.setText(list.get(position).name)
+
+
+            //holder.tv.text=list.get(position).name
+
+            holder.tv.setText(list.get(position).name)
+
+            holder.sdv.setImageURI(list.get(position).bgPicture)
+
+            holder.sdv.setOnClickListener {
+                listener?.onItemClick(list.get(position))
+            }
+
 
         }
     }
