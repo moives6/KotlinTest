@@ -1,5 +1,6 @@
 package zhaoxixiang.bwie.com.kotlintest.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
@@ -15,6 +16,7 @@ import com.astuetz.PagerSlidingTabStrip
 import com.myapplication.PageData
 
 import kotlinx.android.synthetic.main.find_fragment.*
+import zhaoxixiang.bwie.com.kotlintest.FaxianXiangqingActivity
 import zhaoxixiang.bwie.com.kotlintest.Model.bean.bean.FindBean
 import zhaoxixiang.bwie.com.kotlintest.Prestener.FaxianPrestener
 import zhaoxixiang.bwie.com.kotlintest.R
@@ -46,9 +48,21 @@ class FaXianFragment: Fragment() ,FaxianView{
         //fxtv.setText(faxian.get(2).name)
         Log.i("xxx",faxian.get(2).name)
         //faxianrlv?.layoutManager=LinearLayoutManager(activity)
-        faxianrlv?.layoutManager=GridLayoutManager(activity,2)
+        faxianrlv?.layoutManager= GridLayoutManager(activity,2) as RecyclerView.LayoutManager?
         //list=faxian
         var adapter= FaxianAdapter(activity,faxian)
         faxianrlv?.adapter=adapter
+
+        adapter.setOnClick(object :FaxianAdapter.OnItemClick{
+            override fun onItemClick(position: FindBean) {
+
+                val intent=Intent(activity,FaxianXiangqingActivity::class.java)
+
+                intent.putExtra(FaxianXiangqingActivity::name.get(FaxianXiangqingActivity()),position.name)
+
+                startActivity(intent)
+            }
+
+        })
     }
 }
