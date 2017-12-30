@@ -37,5 +37,25 @@ class FaxianDetailPresenter(view:FaxianDetailView){
 
                 })
     }
+    fun pmMore(start:Int,name:String){
+        val flow= model!!.getMoreData(start,name)
+
+        flow.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(object : DisposableSubscriber<Hotbean>() {
+                    override fun onComplete() {
+
+                    }
+
+                    override fun onError(t: Throwable?) {
+
+                    }
+
+                    override fun onNext(t: Hotbean?) {
+                        view!!.showData(t!!)
+                    }
+
+                })
+    }
 
 }

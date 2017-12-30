@@ -1,5 +1,6 @@
 package zhaoxixiang.bwie.com.kotlintest
 
+import android.content.Intent
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -31,24 +32,28 @@ class MainActivity : AppCompatActivity() {
 
                 .isShowDivider(false)
                 .setOnTabChangeListener { position, name ->
-                    when(position){
-                        0->main_tv.setText(name)
-                        1->main_tv.setText(name)
-                        2->main_tv.setText(name)
+                    when (position) {
+                        0 -> main_tv.setText(name)
+                        1 -> main_tv.setText(name)
+                        2 -> main_tv.setText(name)
 
                     }
-                    when(position){
-                        0->rl.visibility=View.VISIBLE
-                        1->rl.visibility=View.VISIBLE
-                        2->rl.visibility=View.VISIBLE
-                        3->rl.visibility=View.GONE
+                    when (position) {
+                        0 -> rl.visibility = View.VISIBLE
+                        1 -> rl.visibility = View.VISIBLE
+                        2 -> rl.visibility = View.VISIBLE
+                        3 -> rl.visibility = View.GONE
+                    }
                 }
-                     }
+        main_sousuo.setOnClickListener {
+            var intent=Intent(this@MainActivity,SeaachActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
     //设置了沉浸式
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
+    /*override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus && Build.VERSION.SDK_INT >= 19) {
             val decorView = window.decorView
@@ -59,5 +64,5 @@ class MainActivity : AppCompatActivity() {
                     or View.SYSTEM_UI_FLAG_FULLSCREEN
                     or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
         }
-    }
+    }*/
 }

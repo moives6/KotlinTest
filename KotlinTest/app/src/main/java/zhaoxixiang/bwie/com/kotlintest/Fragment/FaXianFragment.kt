@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.astuetz.PagerSlidingTabStrip
 import com.myapplication.PageData
 
+
 import kotlinx.android.synthetic.main.find_fragment.*
 import zhaoxixiang.bwie.com.kotlintest.FaxianXiangqingActivity
 import zhaoxixiang.bwie.com.kotlintest.Model.bean.bean.FindBean
@@ -26,6 +27,11 @@ import zhaoxixiang.bwie.com.kotlintest.adapter.FaxianAdapter
 /**
  * Created by admin on 2017/12/27/027.
  */
+
+
+
+
+
 class FaXianFragment: Fragment() ,FaxianView{
 
     var presenter: FaxianPrestener? =null
@@ -53,6 +59,7 @@ class FaXianFragment: Fragment() ,FaxianView{
         var adapter= FaxianAdapter(activity,faxian)
         faxianrlv?.adapter=adapter
 
+
         adapter.setOnClick(object :FaxianAdapter.OnItemClick{
             override fun onItemClick(position: FindBean) {
 
@@ -61,8 +68,10 @@ class FaXianFragment: Fragment() ,FaxianView{
                 intent.putExtra(FaxianXiangqingActivity::name.get(FaxianXiangqingActivity()),position.name)
 
                 startActivity(intent)
+
             }
 
         })
+
     }
 }

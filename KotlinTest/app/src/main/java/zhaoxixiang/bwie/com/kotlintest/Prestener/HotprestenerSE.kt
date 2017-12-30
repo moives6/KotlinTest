@@ -57,4 +57,26 @@ class HotprestenerSE(showView: ShowHotView){
                 })
     }
 
+
+    fun ALLpAndm(){
+        val flowable=hotmodel!!.getHotAllData()
+
+        flowable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableSubscriber<Hotbean>(){
+                    override fun onNext(t: Hotbean?) {
+                        hotView!!.ShowHotData(t!!)
+                    }
+
+                    override fun onComplete() {
+
+                    }
+
+                    override fun onError(t: Throwable?) {
+
+                    }
+
+                })
+    }
+
 }

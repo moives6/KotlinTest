@@ -26,6 +26,7 @@ class HotAdapter(var con: Context, var mlist: Hotbean) : RecyclerView.Adapter<Re
         mv.title.setText(mlist.itemList!!.get(position).data!!.title.toString())
         mv.time.setText(mlist.itemList!!.get(position).data!!.category.toString()+"/")
         mv.img.setImageURI(mlist.itemList!!.get(position).data!!.cover!!.detail)
+        mv.itemView.setTag(position)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
@@ -44,6 +45,7 @@ class HotAdapter(var con: Context, var mlist: Hotbean) : RecyclerView.Adapter<Re
         var time: TextView = itemView!!.findViewById(R.id.tv_time) as TextView
         var title: TextView = itemView!!.findViewById(R.id.tv_title) as TextView
         var img: SimpleDraweeView = itemView!!.findViewById(R.id.iv_photo) as SimpleDraweeView
+
 
     }
 

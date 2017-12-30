@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="180dp"
-    android:alpha="0.6"
+    android:id="@+id/detail_item_rl"
     android:background="@drawable/boman_selector">
 <com.facebook.drawee.view.SimpleDraweeView
     android:id="@+id/detail_item_sdv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    />
+    android:alpha="0.6"/>
     <TextView
         android:id="@+id/detail_item_tv"
         android:layout_width="wrap_content"

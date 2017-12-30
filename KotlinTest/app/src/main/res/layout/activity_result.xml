@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="zhaoxixiang.bwie.com.kotlintest.FaxianXiangqingActivity">
+    tools:context="zhaoxixiang.bwie.com.kotlintest.ResultActivity">
 
     <RelativeLayout
         android:id="@+id/rl"
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <TextView
-            android:id="@+id/detail_tv"
+            android:id="@+id/result_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="首页"
@@ -22,7 +22,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="100dp"/>
         <ImageView
-            android:id="@+id/detail_back"
+            android:id="@+id/result_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/back"
@@ -32,11 +32,11 @@
     </RelativeLayout>
 
     <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/detail_refresh"
+        android:id="@+id/result_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/detail_rlv"
+            android:id="@+id/result_rlv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
